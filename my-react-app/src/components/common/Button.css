@@ -1,0 +1,123 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.btn--sm {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+  min-height: 36px;
+}
+
+.btn--md {
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-base);
+  min-height: 48px;
+}
+
+.btn--lg {
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-lg);
+  min-height: 56px;
+}
+
+/* Variants */
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.btn--primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--pink {
+  background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--pink:hover:not(:disabled) {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+}
+
+.btn--secondary {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--color-gray-200);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn--outline:hover:not(:disabled) {
+  background: var(--color-primary-bg);
+}
+
+.btn--text {
+  background: transparent;
+  color: var(--color-primary);
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+.btn--text:hover:not(:disabled) {
+  background: var(--color-primary-bg);
+}
+
+/* Full Width */
+.btn--full-width {
+  width: 100%;
+}
+
+/* Loading State */
+.btn--loading {
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn__loader {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
