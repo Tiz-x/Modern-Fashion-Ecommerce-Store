@@ -1,7 +1,6 @@
 {
-  "bashscript": "bash build.sh",
-  "outputDirectory": "dist"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "framework": "vite"
 }
-
-
-
