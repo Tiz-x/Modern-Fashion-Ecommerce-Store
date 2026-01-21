@@ -1,12 +1,39 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ]
+  "buildCommand": "bash build.sh",
+  "outputDirectory": "dist"
 }
+```
+
+**Commit**
+
+---
+
+### **5. In Vercel - Change Build Command**
+
+Go to Vercel → Settings → Build and Deployment
+
+**Change Build Command to:**
+```
+bash build.sh
+```
+
+**Output Directory:**
+```
+dist
+```
+
+**Save & Redeploy**
+
+---
+
+## 🎯 **WHY THIS WORKS:**
+
+Instead of using `npm run build` (which has permission issues), we're using a **bash script** that Vercel CAN execute!
+```
+Vercel runs: bash build.sh
+↓
+build.sh runs: npm install + npx vite build
+↓
+Creates dist/ folder
+↓
+SUCCESS! 🎉
