@@ -2,4 +2,4 @@
 set -e
 npm install
 npx vite build
-echo "Build complete!"
+echo "Build complete"
