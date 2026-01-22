@@ -7,3 +7,8 @@ export default defineConfig({
     outDir: 'dist'
   }
 })
+```
+
+### **5. .npmrc** - Should be:
+```
+legacy-peer-deps=true
